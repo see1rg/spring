@@ -47,9 +47,6 @@ public class EmployeeController {
 
     @GetMapping("employees/high-salary")
     Collection<Employee> getEmployeesHighSalary() {
-        {
             return this.employeeService.getEmployeesHighSalary();
-        }
     }
-
 }

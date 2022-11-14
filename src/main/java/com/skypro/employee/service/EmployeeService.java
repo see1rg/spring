@@ -39,25 +39,23 @@ public class EmployeeService {
     }
 
     public Employee getSalaryMin() {
-        return (employees.values()
+        return employees.values()
                 .stream()
-                .min(Comparator.comparingInt(Employee::getSalary)).orElse(null));
+                .min(Comparator.comparingInt(Employee::getSalary)).orElse(null);
     }
 
     public Employee getSalaryMax() {
-        return (employees.values()
+        return employees.values()
                 .stream()
-                .max(Comparator.comparingInt(Employee::getSalary)).orElse(null));
+                .max(Comparator.comparingInt(Employee::getSalary)).orElse(null);
     }
 
     public Collection<Employee> getEmployeesHighSalary() {
         double average = employees.values().stream().mapToInt(Employee::getSalary).average().orElse(0);
-
-        return (employees.values()
+        return employees.values()
                 .stream()
                 .filter(s -> s.getSalary() > average)
-                .toList());
+                .toList();
     }
-
 }
 
